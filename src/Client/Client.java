@@ -20,5 +20,7 @@ public class Client {
         System.out.println("Enter the message:");
         Scanner scanner = new Scanner(System.in);
         scanner.next();
+
+        socket.close();
     }
 }
