@@ -1,20 +1,22 @@
 package Server;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketAddress;
 
 public class Server {
     public static void main(String[] args) throws IOException {
-        Socket s = null;
         ServerSocket socket = new ServerSocket(9000);
-        s = socket.accept();
+        System.out.println("The server side socket created and is ready to listen to requests from the Loopback Network Interface");
+        Socket s = socket.accept();
 
-        InputStream inputStream = new Inp
-        if(s != null){
+        InputStream inputStream = s.getInputStream();
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
 
+        if (s != null) {
+            System.out.println(bufferedInputStream.read());
         }
     }
 }
