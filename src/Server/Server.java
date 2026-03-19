@@ -18,5 +18,8 @@ public class Server {
         if (s != null) {
             System.out.println(bufferedInputStream.read());
         }
+
+        bufferedInputStream.close();
+        socket.close();
     }
 }
