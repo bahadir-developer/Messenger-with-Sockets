@@ -17,9 +17,9 @@ public class Client {
             System.out.println("Client side socket connected");
         }
 
-        System.out.println("Enter the message:");
         Scanner scanner = new Scanner(System.in);
-        scanner.next();
+        System.out.println("Enter the message:");
+        String message = scanner.next();
 
         socket.close();
     }
