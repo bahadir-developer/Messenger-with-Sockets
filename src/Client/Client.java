@@ -11,7 +11,7 @@ public class Client {
         Socket socket = new Socket();
         SocketAddress socketAddress = new InetSocketAddress("127.0.0.1", 8080);
         socket.connect(socketAddress, 60);
-        System.out.println("Client side socket created");
+        System.out.println("Client Side Socket created");
 
         if (socket.isConnected()) {
             System.out.println("Client side socket connected");
