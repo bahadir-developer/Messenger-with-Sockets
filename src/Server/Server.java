@@ -14,7 +14,7 @@ public class Server {
         SocketAddress socketAddress = new InetSocketAddress("127.0.0.1", 8080);
         socket.bind(socketAddress);
 
-        System.out.println("The server side socket created and is ready to listen to requests");
+        System.out.println("The Server Side Socket created");
         Socket s = socket.accept();
 
         InputStream inputStream = s.getInputStream();
