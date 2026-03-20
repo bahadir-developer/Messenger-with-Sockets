@@ -3,13 +3,18 @@ package Server;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketAddress;
 
 public class Server {
     public static void main(String[] args) throws IOException {
-        ServerSocket socket = new ServerSocket(9000);
-        System.out.println("The server side socket created and is ready to listen to requests from the Loopback Network Interface");
+        ServerSocket socket = new ServerSocket();
+        SocketAddress socketAddress = new InetSocketAddress("127.0.0.1", 8080);
+        socket.bind(socketAddress);
+
+        System.out.println("The server side socket created and is ready to listen to requests");
         Socket s = socket.accept();
 
         InputStream inputStream = s.getInputStream();
