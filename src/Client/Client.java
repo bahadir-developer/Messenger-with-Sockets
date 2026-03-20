@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Client {
     public static void main(String[] args) throws IOException {
         Socket socket = new Socket();
-        SocketAddress socketAddress = new InetSocketAddress("127.0.0.1", 9000);
+        SocketAddress socketAddress = new InetSocketAddress("127.0.0.1", 8080);
         socket.connect(socketAddress, 60);
         System.out.println("Client side socket created");
 
