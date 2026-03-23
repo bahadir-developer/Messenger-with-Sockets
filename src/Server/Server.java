@@ -1,8 +1,6 @@
 package Server;
 
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -13,18 +11,13 @@ public class Server {
         ServerSocket socket = new ServerSocket();
         SocketAddress socketAddress = new InetSocketAddress("127.0.0.1", 8080);
         socket.bind(socketAddress);
-
         System.out.println("The Server Side Socket created");
-        Socket s = socket.accept();
 
-        InputStream inputStream = s.getInputStream();
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
-
-        if (s != null) {
-            System.out.println(bufferedInputStream.read());
+        while(true){
+            Socket s = socket.accept();
+            InputStream inputStream = s.getInputStream();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            System.out.println(bufferedReader.read());
         }
-
-        bufferedInputStream.close();
-        socket.close();
     }
 }
